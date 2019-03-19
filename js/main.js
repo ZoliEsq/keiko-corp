@@ -161,7 +161,22 @@ $(document).ready(function(){
 
 	});
 
-
-
-
+	const loadStyleSheet = src => {
+		if(document.createStyleSheet) {
+			document.createStyleSheet(src)
+		} else {
+			const stylesheet = document.createElement('link');
+			stylesheet.href = src;
+			stylesheet.type = 'text/css';
+			stylesheet.ref = 'stylesheet';
+			document.getElementsByTagName('head')[0].appendChild(stylesheet)
+		}
+	}
+	window.onload = function() = {
+		loadStyleSheet('../css/bootstrap.css')
+		loadStyleSheet('..css/owl.transitions.css')
+		loadStyleSheet('..css/owl.carousel.css')
+		loadStyleSheet('..css/animate.css')
+		loadStyleSheet('..css/main.css')
+	}
 });
